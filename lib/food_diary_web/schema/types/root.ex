@@ -19,5 +19,12 @@ defmodule FoodDiaryWeb.Schema.Types.Root do
 
       resolve &UsersResolver.create/2
     end
+
+    @desc "Deletes a user"
+    field :delete_user, type: :user do
+      arg :id, non_null(:id)
+
+      resolve &UsersResolver.delete/2
+    end
   end
 end
