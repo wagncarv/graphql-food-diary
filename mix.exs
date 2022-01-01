@@ -45,7 +45,8 @@ defmodule FoodDiary.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:absinthe, "~> 1.6.0"},
-      {:absinthe_plug, "~> 1.5"}
+      {:absinthe_plug, "~> 1.5"},
+      {:crudry, "~> 2.4.0"}
     ]
   end
 
