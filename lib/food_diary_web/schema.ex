@@ -9,4 +9,8 @@ defmodule FoodDiaryWeb.Schema do
   mutation do
     import_fields :root_mutation
   end
+
+  # subscription do
+
+  # end
 end
