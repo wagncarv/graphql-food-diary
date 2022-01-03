@@ -10,7 +10,12 @@ defmodule FoodDiaryWeb.Router do
 
     # Rotas GraphQL
     forward "/graphql", Absinthe.Plug, schema: FoodDiaryWeb.Schema
-    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: FoodDiaryWeb.Schema
+
+    # Test
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+    schema: FoodDiaryWeb.Schema,
+    socket: FoodDiaryWeb.FoodSocket,
+    interface: :simple
   end
 
   # Enables LiveDashboard only for development

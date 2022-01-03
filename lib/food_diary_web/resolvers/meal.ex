@@ -1,7 +1,11 @@
 defmodule FoodDiaryWeb.Resolvers.Meal do
-    alias FoodDiary.Meals
+  alias Absinthe.Subscription
+  alias FoodDiary.Meals
+  alias FoodDiaryWeb.Endpoint
 
-    def create(%{input: params}, _context) do
-        Meals.Create.call(params)
-    end
+  def create(%{input: params}, _context) do
+    {:ok, meal} = Meals.Create.call(params)
+    Subscription.publish(Endpoint, meal, new_meal: "new_meal_topic")
+    {:ok, meal}
+  end
 end
